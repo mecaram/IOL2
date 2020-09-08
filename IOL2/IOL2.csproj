@@ -1,0 +1,466 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B848C9D9-95BE-4CE0-A196-396807419D38}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>IOL2</RootNamespace>
+    <AssemblyName>IOL2</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>IOL2.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="ClosedXML, Version=0.95.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.95.3\lib\net40\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.11.3.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.11.3\lib\net40\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.0.10.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelNumberFormat.1.0.10\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.13.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.13.0\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.2.5.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.2.5\lib\net45\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.1.11\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.21.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.21\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity, Version=6.7.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySQL.Data.Entities.6.7.4.1\lib\net45\MySql.Data.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="MySqlConnector, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d33d3e53aa5f8c92, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySqlConnector.1.0.1\lib\net45\MySqlConnector.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.11.4.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.11.4\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity.Design" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Packaging.4.7.0\lib\net46\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.21\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.21\lib\net452\Zstandard.Net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Acciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Acciones.Designer.cs">
+      <DependentUpon>Acciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AcercaDe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AcercaDe.designer.cs">
+      <DependentUpon>AcercaDe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Buscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Buscar.designer.cs">
+      <DependentUpon>Buscar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Copia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Copia.designer.cs">
+      <DependentUpon>Copia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cuentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cuentas.designer.cs">
+      <DependentUpon>Cuentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CuentasEditar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CuentasEditar.designer.cs">
+      <DependentUpon>CuentasEditar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameWork\BD.cs" />
+    <Compile Include="Feriados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Feriados.designer.cs">
+      <DependentUpon>Feriados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FeriadosEditar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FeriadosEditar.designer.cs">
+      <DependentUpon>FeriadosEditar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InformeFinal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InformeFinal.designer.cs">
+      <DependentUpon>InformeFinal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InicioSesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InicioSesion.designer.cs">
+      <DependentUpon>InicioSesion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListadoDePaneles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListadoDePaneles.designer.cs">
+      <DependentUpon>ListadoDePaneles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListadodeRuedas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListadodeRuedas.designer.cs">
+      <DependentUpon>ListadodeRuedas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menuppal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menuppal.designer.cs">
+      <DependentUpon>Menuppal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\Acciones.cs" />
+    <Compile Include="Modelos\Correo.cs" />
+    <Compile Include="Modelos\CotizacionModel.cs" />
+    <Compile Include="Modelos\Operaciones.cs" />
+    <Compile Include="Modelos\PanelModel.cs" />
+    <Compile Include="Modelos\PanelPrincipal.cs" />
+    <Compile Include="Modelos\Puntas.cs" />
+    <Compile Include="Modelos\TituloModel.cs" />
+    <Compile Include="Modelos\Token.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Prueba.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prueba.designer.cs">
+      <DependentUpon>Prueba.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ruedas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ruedas.designer.cs">
+      <DependentUpon>Ruedas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RuedasEditar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RuedasEditar.designer.cs">
+      <DependentUpon>RuedasEditar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Servicios\ServiciosAccion.cs" />
+    <Compile Include="Servicios\ServiciosComitente.cs" />
+    <Compile Include="Servicios\ServiciosDatosSimulador.cs" />
+    <Compile Include="Servicios\ServiciosFeriado.cs" />
+    <Compile Include="Servicios\ServiciosInformeFinal.cs" />
+    <Compile Include="Servicios\ServiciosPanelPrincipal.cs" />
+    <Compile Include="Servicios\ServiciosRueda.cs" />
+    <Compile Include="Servicios\ServiciosRuedasDetalleSimulador.cs" />
+    <Compile Include="Servicios\ServiciosTenenciaSimulador.cs" />
+    <Compile Include="Simulador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Simulador.designer.cs">
+      <DependentUpon>Simulador.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Acciones.resx">
+      <DependentUpon>Acciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AcercaDe.resx">
+      <DependentUpon>AcercaDe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Buscar.resx">
+      <DependentUpon>Buscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Copia.resx">
+      <DependentUpon>Copia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cuentas.resx">
+      <DependentUpon>Cuentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CuentasEditar.resx">
+      <DependentUpon>CuentasEditar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Feriados.resx">
+      <DependentUpon>Feriados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FeriadosEditar.resx">
+      <DependentUpon>FeriadosEditar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InformeFinal.resx">
+      <DependentUpon>InformeFinal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InicioSesion.resx">
+      <DependentUpon>InicioSesion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListadoDePaneles.resx">
+      <DependentUpon>ListadoDePaneles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListadodeRuedas.resx">
+      <DependentUpon>ListadodeRuedas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menuppal.resx">
+      <DependentUpon>Menuppal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Prueba.resx">
+      <DependentUpon>Prueba.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ruedas.resx">
+      <DependentUpon>Ruedas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RuedasEditar.resx">
+      <DependentUpon>RuedasEditar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Simulador.resx">
+      <DependentUpon>Simulador.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Imagenes\1.png" />
+    <Content Include="Imagenes\2868903.png" />
+    <Content Include="Imagenes\acciones %281%29.ico" />
+    <Content Include="Imagenes\acciones icon.png" />
+    <Content Include="Imagenes\acciones.ico" />
+    <Content Include="Imagenes\actualizar 2.png" />
+    <Content Include="Imagenes\Actualizar.jpg" />
+    <Content Include="Imagenes\actualizar.png" />
+    <Content Include="Imagenes\add.bmp" />
+    <Content Include="Imagenes\addall.bmp" />
+    <Content Include="Imagenes\anadir.png" />
+    <Content Include="Imagenes\Anterior.BMP" />
+    <Content Include="Imagenes\bolsa.ico" />
+    <Content Include="Imagenes\borrar.png" />
+    <Content Include="Imagenes\buscar.bmp" />
+    <Content Include="Imagenes\calendario %281%29.ico" />
+    <Content Include="Imagenes\calendario %282%29.ico" />
+    <Content Include="Imagenes\calendario.ico" />
+    <Content Include="Imagenes\Como-cambiar-la-imagen-de-fondo-del-inicio-de-sesion-en-tu-Mac-professor-falken.com_.jpg" />
+    <Content Include="Imagenes\Consultar.bmp" />
+    <Content Include="Imagenes\contabilidad %281%29.ico" />
+    <Content Include="Imagenes\contabilidad.ico" />
+    <Content Include="Imagenes\contabilidad.png" />
+    <Content Include="Imagenes\contrato %281%29.ico" />
+    <Content Include="Imagenes\contrato %282%29.ico" />
+    <Content Include="Imagenes\contrato.ico" />
+    <Content Include="Imagenes\contrato.png" />
+    <Content Include="Imagenes\detalle.png" />
+    <Content Include="Imagenes\disco-flexible.png" />
+    <Content Include="Imagenes\eliminar.bmp" />
+    <Content Include="Imagenes\error.png" />
+    <Content Include="Imagenes\FIND.BMP" />
+    <Content Include="Imagenes\flecha-derecha.png" />
+    <Content Include="Imagenes\flecha-hacia-la-izquierda.png" />
+    <Content Include="Imagenes\flechas-hacia-atras.png" />
+    <Content Include="Imagenes\Folder.ico" />
+    <Content Include="Imagenes\folder1.ico" />
+    <Content Include="Imagenes\fondo.jpg" />
+    <Content Include="Imagenes\lmCal.bmp" />
+    <Content Include="Imagenes\lmDer.bmp" />
+    <Content Include="Imagenes\lmIzq.bmp" />
+    <Content Include="Imagenes\login-computer-icons-download-avatar-icon.ico" />
+    <Content Include="Imagenes\Logo.png" />
+    <Content Include="Imagenes\lupa.png" />
+    <Content Include="Imagenes\modificarreg.bmp" />
+    <Content Include="Imagenes\mostrar.png" />
+    <Content Include="Imagenes\mozilla.ico" />
+    <Content Include="Imagenes\nuevoreg.bmp" />
+    <Content Include="Imagenes\objects.ico" />
+    <Content Include="Imagenes\Ocupaciones.ico" />
+    <Content Include="Imagenes\Ocupaciones.png" />
+    <Content Include="Imagenes\Orden.bmp" />
+    <Content Include="Imagenes\ordenasc.bmp" />
+    <Content Include="Imagenes\ordendes.bmp" />
+    <Content Include="Imagenes\organize.ico" />
+    <Content Include="Imagenes\pagar.ico" />
+    <Content Include="Imagenes\PREVIEW.BMP" />
+    <Content Include="Imagenes\Primero.BMP" />
+    <Content Include="Imagenes\profesiones.ico" />
+    <Content Include="Imagenes\profesiones.png" />
+    <Content Include="Imagenes\Proveedores.jpg" />
+    <Content Include="Imagenes\Proveedores.png" />
+    <Content Include="Imagenes\recargar.png" />
+    <Content Include="Imagenes\remall.bmp" />
+    <Content Include="Imagenes\remove.bmp" />
+    <Content Include="Imagenes\shopping cart full.ico" />
+    <Content Include="Imagenes\Siguiente.BMP" />
+    <Content Include="Imagenes\Ultimo.BMP" />
+    <Content Include="Imagenes\usuario.png" />
+    <Content Include="Imagenes\vistapreliminar.BMP" />
+    <Content Include="Imagenes\WZBACK.BMP" />
+    <Content Include="Imagenes\wzend.bmp" />
+    <Content Include="Imagenes\WZLOCATE.BMP" />
+    <Content Include="Imagenes\wznext.bmp" />
+    <Content Include="Imagenes\wzprint.bmp" />
+    <Content Include="Imagenes\wzsave.bmp" />
+    <Content Include="Imagenes\wztop.bmp" />
+    <Content Include="Imagenes\wzundo.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
