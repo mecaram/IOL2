@@ -15,6 +15,7 @@
         public BD()
             : base("name=BD")
         {
+            this.Configuration.ProxyCreationEnabled = false; 
         }
 
         // Agregue un DbSet para cada tipo de entidad que desee incluir en el modelo. Para obtener más información 
