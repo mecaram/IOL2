@@ -1,4 +1,4 @@
-﻿namespace IOL2.EntityFrameWork
+namespace IOL2.EntityFrameWork
 {
     using System;
     using System.ComponentModel.DataAnnotations;
